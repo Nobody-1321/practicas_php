@@ -14,7 +14,10 @@
         <li><a href="program_2.php">Program 2</a></li>
         <li><a href="program_3.php">Program 3</a></li>
         <li><a href="program_4.php">Program 4</a></li>
-        <li><a href="aindex.php">Program 5</a></li>
+        <li><a href="program_5.php">Program 5</a></li>
+        <li><a href="program_7.php">Program 7</a></li>
+        <li><a href="program_8.php">Program 8</a></li>
+        <li><a href="exercise.php">exercise</a></li>
     </ul>
 
 </body>

@@ -1,15 +1,33 @@
 #include <iostream>
 
+void fun(int a) {
+    std::cout << "paso por valor\n";
+    std::cout << "valor de a: " << a << std::endl;
+    std::cout << "direccion de a: " << &a << std::endl;
+    a = 10;
+      std::cout << "-------------------\n";
+}
+
+void func(int &a) {
+    std::cout << "paso por referencia\n";
+    std::cout << "valor de a: " << a << std::endl;
+    std::cout << "direccion de a: " << &a << std::endl;
+    a = 20;
+    std::cout << "-------------------\n";
+}
+
 int main() {
+    int a = 15;
     
-    int a = 5;
-    string b = "Hello";
-    float c = 3.14;
-    double d = 3.1415;
-    char e = 'A';
-    bool f = true;
-    
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "valor de a: " << a << std::endl;
+    std::cout << "direccion de a: " << &a << std::endl;
+    std::cout << "-------------------\n";
+
+    fun(a);
+    func(a);
+
+    std::cout << "valor de a: " << a << std::endl; 
+    std::cout << "direccion de a: " << &a << std::endl;
 
     return 0;
 }
