@@ -1,4 +1,5 @@
 <?php
+
 echo "<p style='text-align: left;'>1. Nombre de la red antecesora de internet: ARPANET</p>";
 echo "<p style='text-align: center;'>2. Nombre del creador de la internet: Vint Cerf y Bob Kahn</p>";
 echo "<p style='text-align: right;'>3. Lenguajes principales para desarrollar páginas web: HTML, CSS, JavaScript</p>";
