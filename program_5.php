@@ -4,12 +4,12 @@ $km_recorridos = rand(100, 300);
 $gas_rendimiento = rand(20, 35);
 $precio = 3.5;
 
-function calcular_costo($km_recorridos, $gas_rendimiento, $precio){
-    $costo = ($km_recorridos / $gas_rendimiento) * $precio;
+function calcular_costo($km_r, $gas_r, $pr){
+    $costo = ($km_r / $gas_r) * $pr;
     return $costo;
 }
 
-$costo_viaje = calcular_costo($km_recorridos, $gas_rendimiento, $precio);
+$costo_viaje = calcular_costo($km_recorridos, $gas_rendimiento, 256);
 
 ?>
 
