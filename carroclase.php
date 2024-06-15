@@ -40,6 +40,7 @@ class Carro {
 // Ejemplo de uso
 $miCarro = new Carro("Toyota", "Corolla", "Rojo");
 
+
 echo $miCarro->arrancar() . "<br>";
 echo $miCarro->acelerar(50) . "<br>";
 echo $miCarro->obtenerVelocidad() . "<br>";
