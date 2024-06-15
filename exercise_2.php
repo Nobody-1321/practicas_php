@@ -8,6 +8,7 @@
 $nombre = "Juan";
 $apellido = "Perez";
 $edad = 20;
+
 $carrera = "Ingenieria en Sistemas";
 $semestre = 3;
 
