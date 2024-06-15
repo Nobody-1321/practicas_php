@@ -1,10 +1,33 @@
 <?php
-$arregloint = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-$arreglofloat = array(1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.10);
+class persona_datos{
+    public $nombre;
+    public $apellido;
+    public $edad;
 
-for ($i = 0; $i < count($arregloint); $i++) {
-    echo $arregloint[$i] . "<br>";
+    public function __construct($nombre, $apellido, $edad) {
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
+        $this->edad = $edad;
+    }
+
+}
+
+class materias{
+    public $nombre_materia;
+    public $calificacion;
+
+    public function __construct($nombre_materia, $calificacion) {
+        $this->nombre_materia = $nombre_materia;
+        $this->calificacion = $calificacion;
+    }
+    
+}
+
+class estudiante{
+    public persona_datos $datos_estudiante;
+    public materias $materias;
+    
 }
 
 ?> 
