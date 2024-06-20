@@ -23,6 +23,8 @@
         <li><a href="exercise_2.php">exercise_2</a></li>
         <li><a href="exercise_3.php">exercise_3</a></li>
         <li><a href="carroclase.php">carroClase</a></li>
+        <li><a href="encapsulamiento.php">encapsulamiento</a></li>
+
     </ul>
 
 </body>

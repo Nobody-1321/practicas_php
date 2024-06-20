@@ -13,6 +13,9 @@ class persona_datos{
 
 }
 
+//class escuela_datos{
+//}
+
 class materias{
     public $nombre_materia;
     public $calificacion;
@@ -28,6 +31,7 @@ class estudiante {
     public persona_datos $datos_estudiante;
     public array $materias; // Cambiado a array para almacenar múltiples materias
     public $promedio;
+    public $tipo;
 
     public function __construct(persona_datos $datos_estudiante, array $materias) {
         $this->datos_estudiante = $datos_estudiante;
@@ -80,9 +84,9 @@ $arreglo_materias = [$materia1, $materia2, $materia3, $materia4];
 
 $estudiante = new estudiante($datos_estudiante, $arreglo_materias);
 
-$promedio = $estudiante->promedio();
-$tipo = $estudiante->tipoEstudiante();
 
+$tipo = $estudiante->tipoEstudiante();
+$promedio = $estudiante->promedio();
 
 $informacionEstudiante = "Nombre: " . $estudiante->datos_estudiante->nombre . "<br>" .
                          "Apellido: " . $estudiante->datos_estudiante->apellido . "<br>" .
@@ -96,6 +100,7 @@ foreach($estudiante->materias as $materia) {
 }
 
 echo $informacionEstudiante;
+
 ?> 
 
 
