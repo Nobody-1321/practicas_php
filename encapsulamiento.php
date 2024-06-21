@@ -74,15 +74,21 @@ class persona_datos_2{
          $this->edad = $nueva_edad;
     }
 
-
 }
 
 echo "<br>";
+
 $persona2 = new persona_datos_2("fracisco", "zavala", 20);
 
 echo (string)"nombre ".$persona2->getnombre()."<br>"; 
 echo (string)"apellido ".$persona2->getapellido()."<br>"; 
 echo (string)"edad ".$persona2->getedad()."<br>"; 
 
+$persona2->setnombre("pedro");
+$persona2->setapellido("zavala");
+$persona2->getedad(25);
 
+echo (string)"nombre ".$persona2->getnombre()."<br>"; 
+echo (string)"apellido ".$persona2->getapellido()."<br>"; 
+echo (string)"edad ".$persona2->getedad()."<br>"; 
 ?>

@@ -13,6 +13,8 @@ class persona_datos{
 
 }
 
+
+
 //class escuela_datos{
 //}
 
@@ -28,14 +30,15 @@ class materias{
 }
 
 class estudiante {
-    public persona_datos $datos_estudiante;
-    public array $materias; // Cambiado a array para almacenar múltiples materias
-    public $promedio;
-    public $tipo;
+    private persona_datos $datos_estudiante;
+    private array $materias; // Cambiado a array para almacenar múltiples materias
+    private $promedio;
+    private $tipo;
 
     public function __construct(persona_datos $datos_estudiante, array $materias) {
         $this->datos_estudiante = $datos_estudiante;
         $this->materias = $materias;
+
     }
 
     // Método para agregar una materia al estudiante
@@ -54,20 +57,42 @@ class estudiante {
         return $suma / count($this->materias);
     }
 
-
     //Metodo para categorizar al estudiante
     public function tipoEstudiante(){
         if($this->promedio >= 9.0){
-            return "Estudiante Excelente";
+            $this->tipo = "Estudiante Excelente";
         }else if($this->promedio >= 8.0 && $this->promedio < 9.0){
-            return "Estudiante Bueno";
+            $this->tipo = "Estudiante Bueno";
         }else if($this->promedio >= 7.0 && $this->promedio< 8.0){
-            return "Estudiante Regular";
+            $this->tipo = "Estudiante Regular";
         }else{
-            return "Estudiante Deficiente";
+            $this->tipo = "Estudiante Deficiente";
         }
     }
 
+    public function infoEstudiante() {
+        $info = "Nombre: " . $this->datos_estudiante->nombre . "<br>" .
+                "Apellido: " . $this->datos_estudiante->apellido . "<br>" .
+                "Edad: " . $this->datos_estudiante->edad . "<br>" .
+                "Promedio: " . $this->promedio . "<br>" .
+                "Tipo de Estudiante: " . $this->tipo . "<br><br>" .
+                "Materias: <br>";
+
+        foreach ($this->materias as $materia) {
+            $info .= $materia->nombre . ": " . $materia->calificacion . "<br>";
+        }
+
+        return $info;
+    }
+     
+}
+
+function crearEstudiante(persona_datos $datos_estudiante, array $materias) {
+    $estudiante = new estudiante($datos_estudiante, $materias);
+    $estudiante->promedio();
+    $estudiante->tipoEstudiante();
+
+    return $estudiante;
 }
 
 // Ejemplo de uso
@@ -82,24 +107,10 @@ $materia4 = new materias("Lenguaje", 8.5);
 // Declarar un arreglo de materias
 $arreglo_materias = [$materia1, $materia2, $materia3, $materia4];
 
-$estudiante = new estudiante($datos_estudiante, $arreglo_materias);
 
+$estudiante = crearEstudiante($datos_estudiante, $arreglo_materias);
 
-$tipo = $estudiante->tipoEstudiante();
-$promedio = $estudiante->promedio();
-
-$informacionEstudiante = "Nombre: " . $estudiante->datos_estudiante->nombre . "<br>" .
-                         "Apellido: " . $estudiante->datos_estudiante->apellido . "<br>" .
-                         "Edad: " . $estudiante->datos_estudiante->edad . "<br>" .
-                         "Promedio: " . $promedio . "<br>" .
-                         "Tipo de Estudiante: " . $tipo . "<br><br>" .
-                         "Materias: <br>";
-
-foreach($estudiante->materias as $materia) {
-    $informacionEstudiante .= $materia->nombre_materia . ": " . $materia->calificacion . "<br>";
-}
-
-echo $informacionEstudiante;
+echo $estudiante->infoEstudiante();
 
 ?> 
 
